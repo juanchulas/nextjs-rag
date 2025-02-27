@@ -1,6 +1,6 @@
 import OpenAI from "openai";
 import { OpenAIStream, StreamingTextResponse} from "ai"
-import { streamText } from "ai";
+//import { streamText } from "ai";
 import { DataAPIClient } from "@datastax/astra-db-ts"
 
 const  { ASTRA_DB_NAMESPACE, 

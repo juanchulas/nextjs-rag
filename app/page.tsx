@@ -2,7 +2,7 @@
 import Image from "next/image"
 import Logo from "./assets/logo_bayer.png"
 import { useChat } from "ai/react"
-import { Message } from "ai"
+//import { Message } from "ai"
 import Bubble from "./components/Bubble"
 import LoadingBubble  from "./components/LoadingBubble"
 import PromptSuggestionsRow from "./components/PromptSuggestionsRow"
