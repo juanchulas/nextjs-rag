@@ -3,6 +3,8 @@ import { OpenAIStream, StreamingTextResponse} from "ai"
 //import { streamText } from "ai";
 import { DataAPIClient } from "@datastax/astra-db-ts"
 
+console.log()
+
 const  { ASTRA_DB_NAMESPACE, 
     ASTRA_DB_COLLECTION, 
     ASTRA_DB_API_ENDPOINT, 
@@ -19,6 +21,7 @@ const db = client.db(ASTRA_DB_API_ENDPOINT, {namespace: ASTRA_DB_NAMESPACE})
 
 export async function POST(req: Request){
     try{
+       
         const {messages} = await req.json()
         const latestMessage = messages[messages.length - 1]?.content
 
@@ -93,8 +96,9 @@ export async function POST(req: Request){
         })
 
 
-
-        const stream = OpenAIStream(response)
+        //const stream = OpenAIStream(response)
+        const stream =OpenAIStream(response as AsyncIterable<any>)
+       
         return new StreamingTextResponse(stream)
     
     }catch (err){
