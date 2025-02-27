@@ -8,7 +8,7 @@ import LoadingBubble  from "./components/LoadingBubble"
 import PromptSuggestionsRow from "./components/PromptSuggestionsRow"
 
 const Home = () => {
-    const {append, isLoading, messages, input, handleInputChange, handleSubmit } =useChat()
+    const {append, isLoading, messages, input, handleInputChange, handleSubmit } = useChat()
 
     const noMessages = !messages || messages.length === 0
     const handlePrompt = (promptText) =>{
@@ -17,6 +17,7 @@ const Home = () => {
             content:promptText,
             role:"user"
         }
+        console.log(msg)
         append(msg)
     }
 

@@ -3,7 +3,6 @@ import { OpenAIStream, StreamingTextResponse} from "ai"
 //import { streamText } from "ai";
 import { DataAPIClient } from "@datastax/astra-db-ts"
 
-console.log()
 
 const  { ASTRA_DB_NAMESPACE, 
     ASTRA_DB_COLLECTION, 
